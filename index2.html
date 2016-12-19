@@ -1,0 +1,46 @@
+<!-- 
+Source (adaptée) :
+Getting started with schema.org using Microdata : 
+http://schema.org/docs/gs.html
+=> microdatas sur film Avatar
+2. avec imbrication du schema personne pour le réalisateur
+3. ATTENTION : Ajout de plein de propriétés pour corriger les erreurs générées par l'outil de validation des microdatas de Google (https://search.google.com/structured-data/testing-tool), qui impose tout une série de propriétés obligatoirement sur Movie et, surtout, sur son trailer. 
+=> nécessité, pour satifaire à ces contraintes, de générer un scope VideoObject sur le trailer pour y insérer les propriétés imposées via des balises meta et link qui n'apparaîtront pas dans la page…
+-->
+<!DOCTYPE html>
+<html lang="fr">
+	<head>
+		<meta charset="utf-8">
+		<title>Microdatas – fiche Avatar</title>
+		<meta name="author" content="Myriam Dupont">
+	    <!--[if lt IE 9]>
+	      <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	    <![endif]-->
+	</head>
+	<body>
+		<div itemscope itemtype="http://schema.org/Movie">
+			 <h1 itemprop="name" role="heading" aria-level="1">
+			 	Avatar
+			 </h1>
+			 <link itemprop="image" href="https://goo.gl/images/aH3JC7">
+			 <meta itemprop="dateCreated" content="2009-12">
+			 <div itemprop="director" itemscope itemtype="http://schema.org/Person">
+				Director:
+				<span itemprop="name">James Cameron</span>
+				(born <span itemprop="birthDate">August 16, 1954</span>)
+			</div>
+			<span itemprop="genre">
+			 	Science fiction
+			</span>
+			<span itemprop="trailer" itemscope itemtype="http://schema.org/VideoObject">
+				<a href="../movies/avatar-theatrical-trailer.html" itemprop="url">
+				 	Trailer
+				</a>
+				<meta itemprop="name" content="James Cameron's Avatar Theatrical Trailer">
+    			<meta itemprop="description" content="James Cameron's fantastic movie trailer! In theaters now! James Cameron did something what changed my life. This is the best movie, what I saw in my life! So...">
+    			<link itemprop="thumbnailUrl" href="https://i.ytimg.com/vi/0AY1XIkX7bY/maxresdefault.jpg">
+				<meta itemprop="uploadDate" content="2016-12-14">
+			</span>
+		</div>		
+	</body>
+</html>
