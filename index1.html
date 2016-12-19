@@ -1,5 +1,9 @@
 <!-- 
-Source : http://schema.org/docs/gs.html
+Source (adaptée) :
+Getting started with schema.org using Microdata : 
+http://schema.org/docs/gs.html
+=> microdatas sur film Avatar
+1. simple (sans imbrication)
 -->
 <!DOCTYPE html>
 <html lang="fr">
@@ -12,17 +16,19 @@ Source : http://schema.org/docs/gs.html
 	    <![endif]-->
 	</head>
 	<body>
-		<div>
-			 <h1 role="heading" aria-level="1">
+		<div itemscope itemtype="http://schema.org/Movie">
+			 <h1 itemprop="name" role="heading" aria-level="1">
 			 	Avatar
 			 </h1>
-			 <span>
-			 	Director: James Cameron (born August 16, 1954)
-			 </span>
-			 <span>
+			 <div>
+			 	Director:
+			 	<span itemprop="director">James Cameron</span>
+			 	(born August 16, 1954)
+			 </div>
+			 <span itemprop="genre">
 			 	Science fiction
 			 </span>
-			 <a href="../movies/avatar-theatrical-trailer.html">
+			 <a href="../movies/avatar-theatrical-trailer.html" itemprop="trailer">
 			 	Trailer
 			 </a>
 		</div>		
